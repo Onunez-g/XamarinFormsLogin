@@ -49,6 +49,7 @@
                        Opacity="0.7"
                    />
                     <Entry
+                       x:Name="signupPass"
                        Placeholder="Password"
                        IsPassword="True"
                        Grid.Column="0"
@@ -57,6 +58,7 @@
                        Opacity="0.7"
                    />
                     <Entry
+                       x:Name="signupRepeat"
                        Placeholder="Repeat Password"
                        IsPassword="True"
                        Grid.Column="0"
@@ -64,8 +66,16 @@
                        Grid.ColumnSpan="2"
                        Opacity="0.7"
                    />
-                    <Image Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="2" Opacity="0.5"/>
-                    <Image Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="3" Opacity="0.5"/>
+                    <Image x:Name="visibleIcon1" Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="2" Opacity="0.5">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image x:Name="visibleIcon2" Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="3" Opacity="0.5">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </Grid>
                 <Button 
                    Text="SIGN UP"

@@ -16,5 +16,11 @@ namespace LoginSignUpPages
         {
             InitializeComponent();
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            loginPass.IsPassword = !loginPass.IsPassword;
+            visibleIcon.Source = loginPass.IsPassword ? "VisiblePass" : "HidePass";
+        }
     }
 }

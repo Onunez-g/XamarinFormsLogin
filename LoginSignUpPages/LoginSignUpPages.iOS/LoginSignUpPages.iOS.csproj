@@ -156,4 +156,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\VisiblePass.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HidePass.png" />
+  </ItemGroup>
 </Project>
