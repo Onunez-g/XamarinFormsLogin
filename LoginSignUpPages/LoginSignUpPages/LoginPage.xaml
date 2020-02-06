@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginSignUpPages.LoginPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Login"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" 
+                FontSize="42" 
+                FontAttributes="Bold"
+                Margin="20, 40, 0, 0"
+                TextColor="Black"
+                Opacity="0.8"/>
+                <Label Text="Sign Up"
+                VerticalOptions="EndAndExpand" 
+                HorizontalOptions="EndAndExpand" 
+                FontSize="32" 
+                FontAttributes="Bold"
+                Margin="0, 40, 20, 0"
+                Opacity="0.5"/>
+            </StackLayout>
+            <Image Source="User" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" Scale="2" HeightRequest="200" Opacity="0.25"/>
+            <Grid Margin="40, 0, 40, 0">
+                <Entry 
+                Placeholder="Username or email address"
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Opacity="0.7"
+               />
+                <Entry
+                Placeholder="Password"
+                IsPassword="True"
+                Grid.Column="0"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Opacity="0.7"
+               />
+                <Image Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="1" Opacity="0.5"/>
+                <Image Source="SavePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="2" Scale="0.8" Opacity="0.5"/>
+            </Grid>
+            <Button 
+               Text="LOG IN"
+               HorizontalOptions="CenterAndExpand"
+               Margin="0,20,0,0"
+               Padding="80,10,80,10"
+               BackgroundColor="White"
+               CornerRadius="25"
+               TextColor="#000055"
+               ImageSource="Checkmark"
+               FontSize="Large"
+               FontAttributes="Bold"
+               Opacity="0.7"
+           />
+            <Label
+                Text="Login with"
+                FontSize="Small"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
+           />
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,30">
+                <Image Source="GoogleP" Opacity="0.6"/>
+                <Image Source="Github" Opacity="0.6"/>
+                <Image Source="Twitter" Opacity="0.6"/>
+                <Image Source="Facebook" Opacity="0.6"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
