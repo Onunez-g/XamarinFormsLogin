@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginSignUpPages.SignUpPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Sign Up"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" 
+                FontSize="42" 
+                FontAttributes="Bold"
+                Margin="20, 40, 0, 0"
+                TextColor="Black"
+                Opacity="0.8"/>
+                <Label Text="Login"
+                VerticalOptions="EndAndExpand" 
+                HorizontalOptions="EndAndExpand" 
+                FontSize="32" 
+                FontAttributes="Bold"
+                Margin="0, 40, 20, 0"
+                Opacity="0.5"/>
+            </StackLayout>
+            <Image 
+                Source="Camera" 
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" 
+                Scale="2" 
+                HeightRequest="200" 
+                Opacity="0.25"
+           />
+            <Grid Margin="40, 0, 40, 0">
+                <Entry 
+                Placeholder="Email address"
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Opacity="0.7"
+               />
+                <Entry 
+                Placeholder="Username"
+                Grid.Column="0"
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                Opacity="0.7"
+               />
+                <Entry
+                Placeholder="Password"
+                IsPassword="True"
+                Grid.Column="0"
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Opacity="0.7"
+               />
+                <Entry
+                Placeholder="Repeat Password"
+                IsPassword="True"
+                Grid.Column="0"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Opacity="0.7"
+               />
+                <Image Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="2" Opacity="0.5"/>
+                <Image Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="3" Opacity="0.5"/>
+            </Grid>
+            <Button 
+               Text="SIGN UP"
+               HorizontalOptions="CenterAndExpand"
+               Margin="0,20,0,0"
+               Padding="80,10,80,10"
+               BackgroundColor="White"
+               CornerRadius="25"
+               TextColor="#000055"
+               ImageSource="Checkmark"
+               FontSize="Large"
+               FontAttributes="Bold"
+               Opacity="0.7"
+           />
+            <Label
+                Text="Terms of Service"
+                FontSize="Small"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
+                Margin="0,0,0,10"
+           />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
