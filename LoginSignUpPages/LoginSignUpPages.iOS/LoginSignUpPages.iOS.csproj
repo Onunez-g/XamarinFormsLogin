@@ -133,7 +133,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\Beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Bookmark2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Burger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cafe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Camera.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\Checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Dining.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Discovery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Discovery2.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Facebook.png" />
@@ -145,7 +172,34 @@
     <BundleResource Include="Resources\GoogleP.png" />
   </ItemGroup>
   <ItemGroup>
+    <BundleResource Include="Resources\HidePass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Nearby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Pizza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Profile2.png" />
+  </ItemGroup>
+  <ItemGroup>
     <BundleResource Include="Resources\SavePass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Top2.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Twitter.png" />
@@ -155,8 +209,5 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\VisiblePass.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\HidePass.png" />
   </ItemGroup>
 </Project>

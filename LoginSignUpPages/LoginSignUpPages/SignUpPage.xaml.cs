@@ -12,9 +12,10 @@ namespace LoginSignUpPages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SignUpPage : ContentPage
     {
-        public SignUpPage()
+        public SignUpPage(string name)
         {
             InitializeComponent();
+            signupEmail.Text = name;
         }
 
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
@@ -27,6 +28,21 @@ namespace LoginSignUpPages
         {
             signupRepeat.IsPassword = !signupRepeat.IsPassword;
             visibleIcon2.Source = signupRepeat.IsPassword ? "VisiblePass" : "HidePass";
+        }
+
+        private async void TapGestureRecognizer_Tapped_2(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(signupEmail.Text) || string.IsNullOrEmpty(signupUser.Text) || string.IsNullOrEmpty(signupPass.Text) || string.IsNullOrEmpty(signupRepeat.Text))
+            {
+                await DisplayAlert("Error", "All fields are required", "Cancel");
+                return;
+            }
+            await Navigation.PushModalAsync(new MenuPage(), false);
         }
     }
 }

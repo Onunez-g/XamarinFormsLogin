@@ -7,80 +7,73 @@
              x:Class="LoginSignUpPages.SignUpPage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Sign Up"
-                       VerticalOptions="StartAndExpand" 
-                       HorizontalOptions="StartAndExpand" 
-                       FontSize="42" 
-                       FontAttributes="Bold"
-                       Margin="20, 40, 0, 0"
-                       TextColor="Black"
-                       Opacity="0.8"/>
-                    <Label Text="Login"
-                       VerticalOptions="EndAndExpand" 
-                       HorizontalOptions="EndAndExpand" 
-                       FontSize="32" 
-                       FontAttributes="Bold"
-                       Margin="0, 40, 20, 0"
-                       Opacity="0.5"/>
-                </StackLayout>
-                <Image 
-                   Source="Camera" 
-                   VerticalOptions="Start" 
-                   HorizontalOptions="CenterAndExpand" 
-                   Scale="2" 
-                   HeightRequest="200" 
-                   Opacity="0.25"
+            <Grid Padding="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Sign Up" Style="{StaticResource headerBold}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label Text="Login" Style="{StaticResource header}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Image Source="Camera" Style="{StaticResource mainImage}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" />
+                <Entry
+                   x:Name="signupEmail"
+                   Placeholder="Email address"
+                   Grid.Column="0"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="4"
                />
-                <Grid Margin="40, 0, 40, 0">
-                    <Entry 
-                       Placeholder="Email address"
-                       Grid.Column="0"
-                       Grid.Row="0"
-                       Grid.ColumnSpan="2"
-                       Opacity="0.7"
-                   />
-                    <Entry 
-                       Placeholder="Username"
-                       Grid.Column="0"
-                       Grid.Row="1"
-                       Grid.ColumnSpan="2"
-                       Opacity="0.7"
-                   />
-                    <Entry
-                       x:Name="signupPass"
-                       Placeholder="Password"
-                       IsPassword="True"
-                       Grid.Column="0"
-                       Grid.Row="2"
-                       Grid.ColumnSpan="2"
-                       Opacity="0.7"
-                   />
-                    <Entry
-                       x:Name="signupRepeat"
-                       Placeholder="Repeat Password"
-                       IsPassword="True"
-                       Grid.Column="0"
-                       Grid.Row="3"
-                       Grid.ColumnSpan="2"
-                       Opacity="0.7"
-                   />
-                    <Image x:Name="visibleIcon1" Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="2" Opacity="0.5">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                    <Image x:Name="visibleIcon2" Source="VisiblePass" HorizontalOptions="End" Grid.Column="1" Grid.Row="3" Opacity="0.5">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                </Grid>
+                <Entry
+                   x:Name="signupUser"
+                   Placeholder="Username"
+                   Grid.Column="0"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="4"
+               />
+                <Entry
+                   x:Name="signupPass"
+                   Placeholder="Password"
+                   IsPassword="True"
+                   Grid.Column="0"
+                   Grid.Row="4"
+                   Grid.ColumnSpan="4"
+               />
+                <Entry
+                   x:Name="signupRepeat"
+                   Placeholder="Repeat password"
+                   IsPassword="True"
+                   Grid.Column="0"
+                   Grid.Row="5"
+                   Grid.ColumnSpan="4"
+               />
+                <Image x:Name="visibleIcon1" Source="VisiblePass" HorizontalOptions="End" Grid.Column="3" Grid.Row="4" Opacity="0.5">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image x:Name="visibleIcon2" Source="VisiblePass" HorizontalOptions="End" Grid.Column="3" Grid.Row="5" Opacity="0.5">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                    </Image.GestureRecognizers>
+                </Image>
                 <Button 
-                   Text="SIGN UP"
-                   HorizontalOptions="CenterAndExpand"
-                   Margin="0,20,0,0"
+                   Text="Sign Up"
+                   Margin="0,0,0,30"
                    Padding="80,10,80,10"
                    BackgroundColor="White"
                    CornerRadius="25"
@@ -89,15 +82,22 @@
                    FontSize="Large"
                    FontAttributes="Bold"
                    Opacity="0.7"
+                   BorderColor="Gray"
+                   BorderWidth="1"
+                   Grid.Row="6"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Clicked="Button_Clicked"
                />
                 <Label
-                   Text="Terms of Service"
+                   Text="Terms of service"
                    FontSize="Small"
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalOptions="EndAndExpand"
-                   Margin="0,0,0,10"
+                   Grid.Row="7"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   HorizontalOptions="Center"
                />
-            </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

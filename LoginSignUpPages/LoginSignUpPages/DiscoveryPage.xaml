@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:view="clr-namespace:LoginSignUpPages.Views"
+             x:Class="LoginSignUpPages.DiscoveryPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid BackgroundColor="LightGray" ColumnSpacing="10" RowSpacing="10" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <view:DiscoverView Grid.Row="0" Grid.Column="0" IconImageSource="Beer" CardTitle="Bars and Hotels" CardDescription="42 Places"/>
+                <view:DiscoverView Grid.Row="0" Grid.Column="1" IconImageSource="Dining" CardTitle="Fine Dining" CardDescription="18 Places"/>
+                <view:DiscoverView Grid.Row="1" Grid.Column="0" IconImageSource="Cafe" CardTitle="Cafes" CardDescription="28 Places"/>
+                <view:DiscoverView Grid.Row="1" Grid.Column="1" IconImageSource="Nearby" CardTitle="Nearby" CardDescription="34 Places"/>
+                <view:DiscoverView Grid.Row="2" Grid.Column="0" IconImageSource="Burger" CardTitle="Fast Food" CardDescription="29 Places" />
+                <view:DiscoverView Grid.Row="2" Grid.Column="1" IconImageSource="Pizza" CardTitle="Featured Foods" CardDescription="21 Places"/>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

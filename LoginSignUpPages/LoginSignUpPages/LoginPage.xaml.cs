@@ -22,5 +22,21 @@ namespace LoginSignUpPages
             loginPass.IsPassword = !loginPass.IsPassword;
             visibleIcon.Source = loginPass.IsPassword ? "VisiblePass" : "HidePass";
         }
+
+        private async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new SignUpPage(loginUser.Text));
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(loginUser.Text) || string.IsNullOrEmpty(loginPass.Text))
+            {
+                await DisplayAlert("Error", "Username and password are required", "cancel");
+                return;
+            }
+            await Navigation.PushModalAsync(new MenuPage(), false);
+
+        }
     }
 }
