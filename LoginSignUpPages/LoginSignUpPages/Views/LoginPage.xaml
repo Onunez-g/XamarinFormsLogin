@@ -27,11 +27,12 @@
                 <Label Text="Login" Style="{StaticResource headerBold}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
                 <Label Text="Sign Up" Style="{StaticResource header}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        <TapGestureRecognizer Command="{Binding GoToSignUpCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Image Source="User" Style="{StaticResource mainImage}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" />
                 <Entry
+                   Text="{Binding User.UserName}"
                    x:Name="loginUser"
                    Placeholder="Username or email address"
                    Grid.Column="0"
@@ -39,16 +40,17 @@
                    Grid.ColumnSpan="4"
                />
                 <Entry
+                   Text="{Binding User.Password}"
                    x:Name="loginPass"
                    Placeholder="Password"
-                   IsPassword="True"
+                   IsPassword="{Binding IsPassword}"
                    Grid.Column="0"
                    Grid.Row="3"
                    Grid.ColumnSpan="4"
                />
-                <Image x:Name="visibleIcon" Source="VisiblePass" HorizontalOptions="End" Grid.Column="3" Grid.Row="3" Opacity="0.5">
+                <Image x:Name="visibleIcon" Source="{Binding PassImg}" HorizontalOptions="End" Grid.Column="3" Grid.Row="3" Opacity="0.5">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding ShowPasswordCommand}"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Image Source="SavePass" HorizontalOptions="End" Grid.Column="3" Grid.Row="4" HeightRequest="30" Opacity="0.5"/>
@@ -68,7 +70,7 @@
                    Grid.Row="5"
                    Grid.Column="0"
                    Grid.ColumnSpan="4"
-                   Clicked="Button_Clicked"
+                   Command="{Binding LoginCommand}"
                />
                 <Label
                    Text="Login with"

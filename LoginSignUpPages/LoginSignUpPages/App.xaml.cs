@@ -11,8 +11,6 @@ namespace LoginSignUpPages
             InitializeComponent();
 
             MainPage = new LoginPage();
-            //MainPage = new SignUpPage();
-            //MainPage = new MainPage();
         }
 
         protected override void OnStart()

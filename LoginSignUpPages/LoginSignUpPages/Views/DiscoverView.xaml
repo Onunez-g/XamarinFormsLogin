@@ -7,10 +7,9 @@
              x:Name="this"
              x:Class="LoginSignUpPages.Views.DiscoverView">
     <Frame x:Name="CardV" 
-        BindingContext="{x:Reference this}"
-           BackgroundColor="White" HasShadow="True" >
+           BackgroundColor="{Binding FrameColor}" HasShadow="True" >
         <Frame.GestureRecognizers>
-            <TapGestureRecognizer Tapped="OnTappedCardView" NumberOfTapsRequired="1"/>
+            <TapGestureRecognizer Command="{Binding ChangeFrameColor}"/>
         </Frame.GestureRecognizers>
         <Grid>
             <Grid.RowDefinitions>
@@ -18,9 +17,9 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Image Source="{Binding IconImageSource, FallbackValue='Nearby'}" />
-            <Label TextColor="Black" FontAttributes="Bold" FontSize="18" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0" Text="{Binding CardTitle, FallbackValue='Card Title'}"/>
-            <Label Opacity="0.9" FontSize="16" HorizontalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="0" Text="{Binding CardDescription, FallbackValue='Card description text.'}" />
+            <Image Source="{Binding IconImageSource}" />
+            <Label TextColor="Black" FontAttributes="Bold" FontSize="18" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0" Text="{Binding CardTitle}"/>
+            <Label Opacity="0.9" FontSize="16" HorizontalOptions="CenterAndExpand" Grid.Row="2" Grid.Column="0" Text="{Binding CardDescription}" />
         </Grid>
     </Frame>
     

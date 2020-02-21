@@ -27,11 +27,12 @@
                 <Label Text="Sign Up" Style="{StaticResource headerBold}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
                 <Label Text="Login" Style="{StaticResource header}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" HorizontalOptions="EndAndExpand">
                     <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                        <TapGestureRecognizer Command="{Binding GoToLoginCommand}"/>
                     </Label.GestureRecognizers>
                 </Label>
                 <Image Source="Camera" Style="{StaticResource mainImage}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" />
                 <Entry
+                   Text="{Binding User.Email}"
                    x:Name="signupEmail"
                    Placeholder="Email address"
                    Grid.Column="0"
@@ -39,6 +40,7 @@
                    Grid.ColumnSpan="4"
                />
                 <Entry
+                   Text="{Binding User.Name}"
                    x:Name="signupUser"
                    Placeholder="Username"
                    Grid.Column="0"
@@ -46,29 +48,31 @@
                    Grid.ColumnSpan="4"
                />
                 <Entry
+                   Text="{Binding User.Password}"
                    x:Name="signupPass"
                    Placeholder="Password"
-                   IsPassword="True"
+                   IsPassword="{Binding IsPassword}"
                    Grid.Column="0"
                    Grid.Row="4"
                    Grid.ColumnSpan="4"
                />
                 <Entry
+                   Text="{Binding User.RepeatPassword}"
                    x:Name="signupRepeat"
                    Placeholder="Repeat password"
-                   IsPassword="True"
+                   IsPassword="{Binding IsPasswordRepeat}"
                    Grid.Column="0"
                    Grid.Row="5"
                    Grid.ColumnSpan="4"
                />
-                <Image x:Name="visibleIcon1" Source="VisiblePass" HorizontalOptions="End" Grid.Column="3" Grid.Row="4" Opacity="0.5">
+                <Image x:Name="visibleIcon1" Source="{Binding PassImg}" HorizontalOptions="End" Grid.Column="3" Grid.Row="4" Opacity="0.5">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        <TapGestureRecognizer Command="{Binding ShowPasswordCommand}" CommandParameter="1"/>
                     </Image.GestureRecognizers>
                 </Image>
-                <Image x:Name="visibleIcon2" Source="VisiblePass" HorizontalOptions="End" Grid.Column="3" Grid.Row="5" Opacity="0.5">
+                <Image x:Name="visibleIcon2" Source="{Binding PassRepeatImg}" HorizontalOptions="End" Grid.Column="3" Grid.Row="5" Opacity="0.5">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        <TapGestureRecognizer Command="{Binding ShowPasswordCommand}" CommandParameter="2"/>
                     </Image.GestureRecognizers>
                 </Image>
                 <Button 
@@ -87,7 +91,7 @@
                    Grid.Row="6"
                    Grid.Column="0"
                    Grid.ColumnSpan="4"
-                   Clicked="Button_Clicked"
+                   Command="{Binding SignUpCommand}"
                />
                 <Label
                    Text="Terms of service"
